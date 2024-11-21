@@ -22,3 +22,16 @@ enum class Halaman{
     FORMULIR,
     TAMPILDATA
 }
+
+@Composable
+fun NavigationControl(
+    modifier: Modifier = Modifier,
+    viewModel: SiswaViewModel = viewModel(),
+    navHost: NavHostController = rememberNavController()
+){
+    val uiState by viewModel.statusUI.collectAsState()
+
+    NavHost(
+        navController = navHost,
+        startDestination = Halaman.FORMULIR.name
+

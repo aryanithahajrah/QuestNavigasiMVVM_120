@@ -35,3 +35,25 @@ fun TampilDataView(
         }
     }
 }
+
+@Composable
+fun TampilData(
+    parameterNama: String,
+    argum: String
+){
+    Column (
+        modifier = Modifier.padding(16.dp)
+    ){
+        Row (
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ){
+            Text(text = parameterNama,
+                modifier = Modifier.weight(0.8f))
+            Text(text = ":",
+                modifier = Modifier.weight(0.2f))
+            Text(text = argum,
+                modifier = Modifier.weight(2f))
+        }
+    }
+}
